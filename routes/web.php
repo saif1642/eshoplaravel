@@ -41,3 +41,15 @@ Route::post('/update-category/{category_id}','CategoryController@update_category
 Route::get('/delete-category/{category_id}','CategoryController@delete_category');
 Route::post('/save-category','CategoryController@save_category');
 
+/* BRAND ROUTES */
+Route::get('/add-brand','ManufactureController@index');
+Route::get('/all-brand','ManufactureController@all_brand');
+Route::get('/inactive-brand/{manufacture_id}','ManufactureController@inactive_brand');
+Route::get('/active-brand/{manufacture_id}','ManufactureController@active_brand');
+Route::get('/edit-brand/{manufacture_id}','ManufactureController@edit_brand');
+Route::post('/update-brand/{manufacture_id}','ManufactureController@update_brand');
+Route::get('/delete-brand/{manufacture_id}','ManufactureController@delete_brand');
+Route::post('/save-brand','ManufactureController@save_brand');
+
+
+
