@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/* FRONTEND ROUTES */
+/*....... FRONTEND ROUTES ..........*/
 Route::get('/', 'HomeController@index');
 
 
@@ -25,8 +25,19 @@ Route::get('/', 'HomeController@index');
 
 
 
-/* BACKEND ROUTES */
+/*........ BACKEND ROUTES ...........*/
+Route::get('/logout','SuperAdminController@logout');
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');
 Route::post('/admin-dashboard','AdminController@dashboard');
+
+/* CATEGORY ROUTES */
+Route::get('/add-category','CategoryController@index');
+Route::get('/all-category','CategoryController@all_category');
+Route::get('/inactive-category/{category_id}','CategoryController@inactive_category');
+Route::get('/active-category/{category_id}','CategoryController@active_category');
+Route::get('/edit-category/{category_id}','CategoryController@edit_category');
+Route::post('/update-category/{category_id}','CategoryController@update_category');
+Route::get('/delete-category/{category_id}','CategoryController@delete_category');
+Route::post('/save-category','CategoryController@save_category');
 
