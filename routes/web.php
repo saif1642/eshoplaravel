@@ -51,5 +51,8 @@ Route::post('/update-brand/{manufacture_id}','ManufactureController@update_brand
 Route::get('/delete-brand/{manufacture_id}','ManufactureController@delete_brand');
 Route::post('/save-brand','ManufactureController@save_brand');
 
+/* PRODUCT ROUTES */
+Route::get('/add-product','ProductController@index');
+
 
 
