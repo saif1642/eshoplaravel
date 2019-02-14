@@ -2,7 +2,7 @@
 @section('content')
 <div class="features_items"><!--features_items-->
     <h2 class="title text-center">Features Items</h2>
-    @foreach($all_product as $product)
+    @foreach($all_product_by_category as $product)
     <div class="col-sm-4">
         <div class="product-image-wrapper">
             <div class="single-products">
