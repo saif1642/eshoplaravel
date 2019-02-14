@@ -53,6 +53,7 @@ Route::post('/save-brand','ManufactureController@save_brand');
 
 /* PRODUCT ROUTES */
 Route::get('/add-product','ProductController@index');
+Route::post('/save-product','ProductController@save_product');
 
 
 
