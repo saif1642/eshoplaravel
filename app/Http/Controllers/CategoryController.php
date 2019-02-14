@@ -9,9 +9,11 @@ session_start();
 class CategoryController extends Controller
 {
     public function index(){
+        $this->AdminAuthCheck();
         return view('admin.add_category');
     }
     public function all_category(){
+        $this->AdminAuthCheck();
         $all_category = DB::table('tbl_category')->get();
         //dd($all_category);
         return view('admin.all_category')->with('all_category', $all_category);
@@ -39,6 +41,7 @@ class CategoryController extends Controller
         return redirect()->back();
     }
     public function edit_category($category_id){
+        $this->AdminAuthCheck();
         $category_info = DB::table('tbl_category')->where('category_id',$category_id)
                                                   ->first();
         return view('admin.edit_category')->with('category_info',$category_info);
@@ -57,5 +60,13 @@ class CategoryController extends Controller
                                  ->delete();
         Session::put('message','Category Deleted Successfully !!');
         return redirect()->back();
+    }
+    public function AdminAuthCheck(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return;
+        }else{
+            return redirect('/admin')->send();
+        }
     }
 }

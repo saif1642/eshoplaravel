@@ -19,13 +19,13 @@
         ?>
     </p>
     <div class="box-content">
-        <form class="form-horizontal" action="{{url('/save-product')}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{url('/update-product/'.$product_details->product_id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <fieldset>
             <div class="control-group">
                 <label class="control-label" for="date01">Product Name</label>
                 <div class="controls">
-                <input type="text" class="input-xlarge" name="product_name" required="">
+                <input type="text" class="input-xlarge" name="product_name" required="" value="{{$product_details->product_name}}">
                 </div>
             </div> 
             <div class="control-group">
@@ -53,13 +53,13 @@
             <div class="control-group hidden-phone">
                 <label class="control-label" for="textarea2">Product Short Description</label>
                 <div class="controls">
-                <textarea class="cleditor" id="textarea2" rows="3" name="product_short_description"></textarea>
+                <textarea class="cleditor" id="textarea2" rows="3" name="product_short_description">{{$product_details->product_short_description}}</textarea>
                 </div>
             </div>
             <div class="control-group hidden-phone">
                 <label class="control-label" for="textarea2">Product Long Description</label>
                 <div class="controls">
-                <textarea class="cleditor" id="textarea2" rows="3" name="product_long_description"></textarea>
+                <textarea class="cleditor" id="textarea2" rows="3" name="product_long_description">{{$product_details->product_long_description}}</textarea>
                 </div>
             </div>
             
@@ -72,29 +72,24 @@
             <div class="control-group">
                 <label class="control-label" for="date01">Product Price</label>
                 <div class="controls">
-                <input type="text" class="input-xlarge" name="product_price" required="">
+                <input type="text" class="input-xlarge" name="product_price" required="" value="{{$product_details->product_price}}">
                 </div>
             </div> 
             <div class="control-group">
                 <label class="control-label" for="date01">Product Size</label>
                 <div class="controls">
-                <input type="text" class="input-xlarge" name="product_size" required="">
+                <input type="text" class="input-xlarge" name="product_size" required="" value="{{$product_details->product_size}}">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="date01">Product Color</label>
                 <div class="controls">
-                <input type="text" class="input-xlarge" name="product_color" required="">
+                <input type="text" class="input-xlarge" name="product_color" required="" value="{{$product_details->product_color}}">
                 </div>
             </div>  
-            <div class="control-group hidden-phone">
-                <label class="control-label" for="textarea2">Publication Status</label>
-                <div class="controls">
-                    <input type="checkbox" name="publication_status" class="input-xlarge" value="1">
-                </div>
-            </div>
+          
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Add Product</button>
+                <button type="submit" class="btn btn-primary">Edit Product</button>
                 <button type="reset" class="btn">Cancel</button>
             </div>
             </fieldset>
